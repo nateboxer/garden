@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	width="300"
+	styleName="PropertiesVBox" 
+	horizontalScrollPolicy="off" verticalScrollPolicy="off"
+	horizontalAlign="center"
+	mouseEnabled="false" mouseUp="Application.application.main.letGo(null)"
+	addedToStage="init()">
+	<mx:Script>
+		<![CDATA[
+			import net.nateboxer.garden.utils.VoteUtils;
+			import net.nateboxer.garden.utils.TextUtils;
+			import net.nateboxer.garden.plants.Plant;
+			import mx.core.Application;
+			
+			public var plant:Plant;
+						
+			private function init():void {
+			}
+			
+			public function showProps( plant:Plant ):void {
+				this.y = 50;
+				Application.application.splash.visible = false;
+				if( this.plant && (this.plant == plant) ) {
+					return;
+				} else if( this.plant ) {
+					this.plant.release();
+				}
+				this.plant = plant;
+				plant.hold();
+				visible = true;
+				x = (parent.width - this.width) / 2;
+				//y = 10;
+				update( plant );
+				voteButton.addEventListener( KeyboardEvent.KEY_UP, checkEnter, false, 0, true );
+				plantName.addEventListener( KeyboardEvent.KEY_UP, checkEnter, false, 0, true );
+				voteButton.setFocus();
+				voteButton.drawFocus( true );
+			}		
+			
+			public function update( plant:Plant ):void {
+				parentName.text = plant.parentName;
+			}
+			
+			public function hideProps():void {
+				visible = false;
+				if( plant ) {
+					plant.release( true );
+					plant = null;
+				}
+				plantName.text = "";
+				voteButton.removeEventListener( KeyboardEvent.KEY_UP, checkEnter, false );
+				plantName.removeEventListener( KeyboardEvent.KEY_UP, checkEnter, false );
+			}
+		
+			private function checkEnter( ke:KeyboardEvent ):void {
+				if( ke.keyCode == Keyboard.ENTER ) {
+					votePlant();
+				}
+			}
+			
+			private function votePlant():void {
+				VoteUtils.votePlant( plant, Application.application.main.centerScreen, plantName.text );
+				hideProps();		
+				Application.application.main.updateStatus( "Thanks for voting!" );
+			}
+		]]>
+	</mx:Script>
+
+	<mx:Label text="This plant descended from:" 
+		styleName="PropertiesLabel" mouseEnabled="false" selectable="false"/>
+	<mx:Text id="parentName" text="" textAlign="center"
+		styleName="PropertiesText" width="100%" mouseEnabled="false" selectable="false"/>
+
+	<mx:HRule width="100%" styleName="PropertiesHRule" mouseEnabled="false"/>
+	<mx:Spacer height="10"/>
+	
+	<mx:Label text="Name plant:" 
+		styleName="PropertiesLabel" mouseEnabled="false" selectable="false"/>
+	<mx:TextInput width="60%" id="plantName" text="" maxChars="30" 
+		styleName="PropertiesTextInput"/>
+	
+	<mx:Spacer height="15"/>
+	
+	<mx:HBox width="100%" horizontalAlign="center">
+		<mx:Button id="voteButton" width="110" label="I Like" click="votePlant()" styleName="VoteButton"/>
+		<mx:Button id="cancelButton" width="110" label="Nevermind" click="hideProps()" styleName="VoteButton"/>				
+	</mx:HBox>
+
+	<mx:Spacer height="5"/>
+
+</mx:VBox>

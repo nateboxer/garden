@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	xmlns:gd="net.nateboxer.garden.desktop.*"
+	applicationComplete="main.init()"
+	width="1000" height="600" showStatusBar="false"
+	layout="absolute">
+	
+	<mx:Style source="DnaBrowser.css"/>
+	
+	<gd:DnaBrowser id="main" width="100%" height="100%"/>
+	
+</mx:WindowedApplication>

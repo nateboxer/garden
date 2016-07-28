@@ -1,0 +1,153 @@
+@font-face {
+    src: url("Roadgeek 2005 Old Parks.otf");
+	fontFamily: oldparks;
+	fontWeight: normal;
+    unicodeRange:
+        U+0020-U+0040, /* Punctuation, Numbers */
+        U+0041-U+005A, /* Upper-Case A-Z */
+        U+005B-U+0060, /* Punctuation and Symbols */
+        U+0061-U+007A, /* Lower-Case a-z */
+        U+007B-U+007E; /* Punctuation and Symbols */
+}
+* {
+	paddingTop: 0;
+	paddingBottom: 0;
+	paddingLeft: 0;
+	paddingRight: 0;
+	verticalGap: 0;
+	horizontalGap: 0;
+}
+Application {
+	backgroundGradientAlphas: 1.0, 1.0;
+	backgroundGradientColors: #F4F4F8, #B4B4B8;
+}
+VBox.PropertiesVBox
+{
+	borderStyle: solid;
+	borderThickness: 3;
+	paddingLeft: 15;
+	paddingRight: 15;
+	paddingBottom: 15;
+	paddingTop: 15;
+	verticalGap: 5;
+	verticalAlign: top;
+	fontFamily: oldparks;
+	fontSize: 13;
+	backgroundColor: #C46D3B;
+	backgroundAlpha: 1;
+	borderColor: #FFFFFF;
+	cornerRadius: 10;
+}
+Button.VoteButton
+{
+	fontSize: 14;
+	fontWeight: normal;
+	fontFamily: oldparks;
+	color: #FFFFFF;
+	textRollOverColor: #FFFFFF;
+	textSelectedColor: #CA7C4E;
+	borderColor: #FFFFFF;
+	themeColor: #CA7C4E;
+	fillAlphas: 1.0, 1.0;
+	fillColors: #CA7C4E, #61361D;
+	disabledColor: #FFFFFF;
+	cornerRadius: 8;
+}
+Label.PropertiesTitle
+{
+	fontSize: 16;
+	color: #FFFFFF;
+}
+Label.PropertiesLabel
+{
+	color: #FFFFFF;
+	fontSize: 13;
+}
+Text.PropertiesText
+{
+	fontSize: 13;
+	color: #FFFFFF;
+}
+HRule.PropertiesHRule
+{
+	strokeColor: #FFFFFF;
+}
+TextInput.PropertiesTextInput
+{
+	backgroundAlpha: 1;
+	color: #61361D;
+	fontSize: 14;
+	fontFamily: oldparks;
+	borderStyle: solid;
+	borderColor: #FFFFFF;
+	borderThickness: 2;
+	cornerRadius: 8;
+	paddingLeft: 3;
+	paddingRight: 3;
+	focusAlpha: 0;
+}
+VBox.SplashVBox
+{
+	borderStyle: solid;
+	borderThickness: 3;
+	paddingLeft: 15;
+	paddingRight: 15;
+	paddingBottom: 15;
+	paddingTop: 10;
+	verticalGap: 5;
+	verticalAlign: top;
+	fontFamily: oldparks;
+	fontSize: 12;
+	backgroundColor: #C46D3B;
+	backgroundAlpha: 1;
+	borderColor: #FFFFFF;
+	cornerRadius: 10;
+}
+Label.SplashTitle
+{
+	fontSize: 20;
+	color: #FFFFFF;
+}
+TextArea.SplashTextArea
+{
+	borderStyle: none;
+	backgroundAlpha: 0.0;
+	fontFamily: oldparks;
+	color: #FFFFFF;
+	fontSize: 16;
+	focusAlpha: 0;
+	focusThickness: 0;
+	selectable: false;
+}
+Label.SplashLabel
+{
+	color: #FFFFFF;
+	fontSize: 15;
+}
+VBox.MarkerVBox
+{
+	borderStyle: solid;
+	borderThickness: 3;
+	paddingLeft: 5;
+	paddingRight: 5;
+	paddingBottom: 5;
+	paddingTop: 5;
+	verticalAlign: top;
+	verticalGap: 0;
+	fontFamily: oldparks;
+	fontSize: 13;
+	backgroundColor: #C46D3B;
+	backgroundAlpha: 1;
+	borderColor: #FFFFFF;
+	cornerRadius: 10;
+}
+Label.MileLabel
+{
+	color: #FFFFFF;
+	fontSize: 24;
+}
+Label.UnitsLabel
+{
+	color: #FFFFFF;
+	fontSize: 13;
+}

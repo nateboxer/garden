@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" 
+	styleName="MarkerVBox" 
+	horizontalScrollPolicy="off" verticalScrollPolicy="off"
+	horizontalAlign="center"
+	mouseEnabled="false">
+	
+	<mx:Script>
+		<![CDATA[
+			public function setKpx( kpx:int ):void {
+				miles.text = "" + Math.round( kpx / 1000 );
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Label id="miles" text="" textAlign="center"
+		styleName="MileLabel" mouseEnabled="false" selectable="false"/>
+		
+	<mx:Label text="Kpx" textAlign="center"
+		styleName="UnitsLabel" mouseEnabled="false" selectable="false"/>
+	
+</mx:VBox>

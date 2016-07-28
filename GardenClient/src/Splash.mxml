@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	width="380"
+	styleName="SplashVBox" 
+	horizontalScrollPolicy="off" verticalScrollPolicy="off"
+	horizontalAlign="center"
+	mouseEnabled="false"
+	mouseUp="Application.application.main.letGo(null)">
+
+	<mx:Script>
+		<![CDATA[
+			import mx.core.Application;			
+		]]>
+	</mx:Script>
+	
+	<mx:Label text="Welcome to the Garden" 
+		styleName="SplashTitle" mouseEnabled="false" selectable="false"/>
+
+	<mx:Label text="Please Vote!" 
+		styleName="SplashTitle" mouseEnabled="false" selectable="false"/>
+	
+	<mx:Spacer height="15"/>
+		
+	<mx:TextArea width="90%" height="40"
+		text="- Click on plants to vote" textAlign="center"
+		styleName="SplashTextArea" mouseEnabled="false" selectable="false"/>
+
+	<mx:TextArea width="90%" height="40"
+		text="- Click and drag to move" textAlign="center"
+		styleName="SplashTextArea" mouseEnabled="false" selectable="false"/>
+
+	<mx:Spacer height="10"/>
+
+	<mx:Button id="closeButton" width="85" label="Start" click="this.visible=false" styleName="VoteButton"/>				
+
+</mx:VBox>
