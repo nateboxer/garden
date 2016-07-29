@@ -2,7 +2,7 @@
 
 The garden was a project I built to explore evolving plant morphology (without any selection pressure or fitness function other than human interaction.) Each plant's DNA contains drawing instructions that mutate over time. People interact with the simulation via a web site and may vote on the plants they like, thus ensuring those plants' DNA will survive to the next generation (with mutations.)
 
-<img src="http://nateboxer.net/art/2009/i/amberlangua.png" width="50%" height="50%"/>
+<p align="center"><img src="http://nateboxer.net/i/garden.jpg"/></p>
 
 ## Modules
 
